@@ -22,8 +22,8 @@ const sortArray = (yourArray) => {
 const findContigSum = (yourArray) => {
   let output = [];
   let temp;
-  for ( j = 0; j < yourArray.length; j++ ) {
-    temp = yourArray.slice(j)
+  for ( i = 0; i < yourArray.length; i++ ) {
+    temp = yourArray.slice(i,j)
     output.push(temp.reduce((a,b)=> a+b,0))
   }
   return output
