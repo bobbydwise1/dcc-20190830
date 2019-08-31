@@ -17,6 +17,22 @@ const sortArray = (yourArray) => {
   return temp
 }
 
+const findContigSum = (yourArray) => {
+  let output = 0;
+  let tempval;
+  let tempArray = [];
+  for (i=0; i < yourArray.length-1; i++) {
+    if (yourArray[i] < yourArray[i+1]) {
+      if (tempArray.length == 0) {
+        tempArray.push(yourArray[i],yourArray[i+1])
+      } else {
+        tempArray.push(yourArray[i+1])
+      }
+    }
+  }
+  return tempArray;
+}
+
 let test0 = [34, -50, 42, 14, -5, 86]
 let test1 = [-5, -1, -8, -9]
 
