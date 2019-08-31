@@ -20,19 +20,17 @@ const sortArray = (yourArray) => {
 }
 
 const findContigSum = (yourArray) => {
-  let totalSum = 0;
-  let prev;
-  let now;
-  for (i=1; i < yourArray.length-1; i++) {
-    if (yourArray[i-1] < yourArray[i]) {
-      output = output+yourArray[i]
-    }
+  let output = 0;
+  for ( i = 0; i < yourArray.length-1; i++ ) {
+    output = output + yourArray[i]
   }
-  return output;
+  return output
 }
 
 let test0 = [34, -50, 42, 14, -5, 86]
 let test1 = [-5, -1, -8, -9]
+console.log(sortArray(test0))
+console.log(sortArray(test1))
 console.log(findContigSum(test0))
 console.log(findContigSum(test1))
 
