@@ -12,29 +12,31 @@ Given the array [-5, -1, -8, -9], the maximum sum would be 0, since we would not
 Do this in O(N) time.
 */
 
+//?
+
 const sortArray = (yourArray) => {
   let temp = yourArray.slice().sort(function(a,b){return a-b})
   return temp
 }
 
 const findContigSum = (yourArray) => {
-  let output = 0;
-  let tempval;
-  let tempArray = [];
-  for (i=0; i < yourArray.length-1; i++) {
-    if (yourArray[i] < yourArray[i+1]) {
-      if (tempArray.length == 0) {
-        tempArray.push(yourArray[i],yourArray[i+1])
-      } else {
-        tempArray.push(yourArray[i+1])
-      }
+  let totalSum = 0;
+  let prev;
+  let now;
+  for (i=1; i < yourArray.length-1; i++) {
+    if (yourArray[i-1] < yourArray[i]) {
+      output = output+yourArray[i]
     }
   }
-  return tempArray;
+  return output;
 }
 
 let test0 = [34, -50, 42, 14, -5, 86]
 let test1 = [-5, -1, -8, -9]
+console.log(findContigSum(test0))
+console.log(findContigSum(test1))
+
+
 
 $(document).ready(function() {
   $('#form1').submit(function(event){
