@@ -20,19 +20,21 @@ const sortArray = (yourArray) => {
 }
 
 const findContigSum = (yourArray) => {
-  let output = 0;
-  for ( i = 0; i < yourArray.length-1; i++ ) {
-    output = output + yourArray[i]
+  let output = [];
+  let temp;
+  for ( j = 0; j < yourArray.length) {
+    temp = yourArray.slice(j)
+    for ( i = 0; i < temp.length; i++ ) {
+      output = output + temp[i]
+      console.log('@ index ', i, ', sum is now: ', output)
+    }
   }
   return output
 }
 
 let test0 = [34, -50, 42, 14, -5, 86]
 let test1 = [-5, -1, -8, -9]
-console.log(sortArray(test0))
-console.log(sortArray(test1))
 console.log(findContigSum(test0))
-console.log(findContigSum(test1))
 
 
 
