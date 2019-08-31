@@ -12,7 +12,13 @@ Given the array [-5, -1, -8, -9], the maximum sum would be 0, since we would not
 Do this in O(N) time.
 */
 
+const sortArray = (yourArray) => {
+  let temp = yourArray.slice().sort(function(a,b){return a-b})
+  return temp
+}
 
+let test0 = [34, -50, 42, 14, -5, 86]
+let test1 = [-5, -1, -8, -9]
 
 $(document).ready(function() {
   $('#form1').submit(function(event){
